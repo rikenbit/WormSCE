@@ -11,4 +11,4 @@
 #SBATCH -p node03-06
 SLURM_RESTART_COUNT=2
 
-/home/yamaken/miniconda3/bin/Rscript src/paper1.R
+/home/yamaken/miniconda3/bin/Rscript src/paper2.R

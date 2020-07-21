@@ -1,3 +1,6 @@
 .nfs*
 ._*
-DS_Store
+.DS_Store
+data/*
+.snakemake/*
+output/*
