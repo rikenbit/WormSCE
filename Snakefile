@@ -7,6 +7,8 @@ rule all:
 rule paper1:
 	output:
 		'output/sce_paper1.RData'
+	resources:
+		mem_gb=200
 	benchmark:
 		'benchmarks/paper1.txt'
 	log:
@@ -17,6 +19,8 @@ rule paper1:
 rule paper2:
 	output:
 		'output/sce_paper2.RData'
+	resources:
+		mem_gb=200
 	benchmark:
 		'benchmarks/paper2.txt'
 	log:
@@ -27,6 +31,8 @@ rule paper2:
 rule paper3:
 	output:
 		'output/sce_paper3.RData'
+	resources:
+		mem_gb=200
 	benchmark:
 		'benchmarks/paper3.txt'
 	log:
