@@ -6,7 +6,7 @@ download.file("https://ftp.ncbi.nlm.nih.gov/geo/series/GSE136nnn/GSE136049/suppl
 
 
 download.file("https://www.dropbox.com/sh/ewq7cu7sbjixfb4/AABJ24FpaLPO4DgS_W8m3I0va/081519_L4_all_cells_cds.rds.zip?dl=1", "081519_L4_all_cells_cds.rds.zip")
-unzip("data/081519_L4_all_cells_cds.rds.zip")
+unzip("081519_L4_all_cells_cds.rds.zip")
 file.rename("081519_L4_all_cells_cds.rds", "data/081519_L4_all_cells_cds.rds")
 
 
