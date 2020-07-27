@@ -5,7 +5,7 @@ download.file("https://ftp.ncbi.nlm.nih.gov/geo/series/GSE136nnn/GSE136049/suppl
 download.file("https://ftp.ncbi.nlm.nih.gov/geo/series/GSE136nnn/GSE136049/suppl/GSE136049%5Fgene%5Fby%5Fcell%5Fcount%5Fmatrix%2Etxt%2Egz", "data/GSE136049_gene_by_cell_count_matrix.txt.gz")
 
 
-download.file("https://www.dropbox.com/sh/ewq7cu7sbjixfb4/AABJ24FpaLPO4DgS_W8m3I0va/081519_L4_all_cells_cds.rds.zip?dl=1", "data/081519_L4_all_cells_cds.rds.zip")
+download.file("https://www.dropbox.com/sh/ewq7cu7sbjixfb4/AABJ24FpaLPO4DgS_W8m3I0va/081519_L4_all_cells_cds.rds.zip?dl=1", "081519_L4_all_cells_cds.rds.zip")
 unzip("data/081519_L4_all_cells_cds.rds.zip")
 file.rename("081519_L4_all_cells_cds.rds", "data/081519_L4_all_cells_cds.rds")
 
