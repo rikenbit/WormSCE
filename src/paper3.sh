@@ -11,4 +11,5 @@
 #SBATCH -p node03-06
 SLURM_RESTART_COUNT=2
 
-/home/yamaken/miniconda3/bin/Rscript src/paper3.R
+Rscript=`ls .snakemake/conda/*/bin/Rscript`
+$Rscript src/paper3.R
