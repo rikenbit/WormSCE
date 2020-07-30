@@ -5,3 +5,5 @@ data/*
 .snakemake/*
 output/*
 benchmarks/*
+logs/*
+*.sh.*
