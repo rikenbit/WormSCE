@@ -13,8 +13,8 @@ snakemake -j 1
 - Snakemake (5.20.0 or higher)
 
 # Summary
-|　paper　| SRA ID　| GEO ID |　遺伝子数 | 細胞数 | 細胞型数 |
-| ---- | ---- | ---- | ---- | ---- | ---- |
+|　paper　| SRA ID　| GEO ID |　No. Genes | No. Cells | No. Cell types |
+| :----: | :----: | :----: | ----: | ----: | ----: |
 |  1  |  SRP106481  |  GSE9856  | 20271  |  42035  |  31  |
 |  2  |  SRP186643  |  GSE126954  |  20222  |  89701  |  36  |
 |  3  |  SRP218876  |  GSE136049  |  21393  |  65450  |  133  |
