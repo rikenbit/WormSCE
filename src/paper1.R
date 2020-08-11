@@ -25,15 +25,19 @@ sce <- SingleCellExperiment(list(counts = smat_convertID))
 WBGene <- as.character(convertID$ctable[,"Left"])
 rowData(sce)$WormBase <- WBGene
 
-#6 colData(sce)$CellTypeに細胞型名
-#細胞型対応表作成
+#6 colData(sce)$CellTypeに細胞型名 +tissue
+#細胞型対応表作成←このステップ飛ばして，いきなりベクトルに代入すればよくない？
 cds_id_type <- data.frame(
   "cell_id" = pData(cds)[,1],
-  "cell_type" = pData(cds)[,13]
+  "cell_type" = pData(cds)[,13],
+  "tissue" = pData(cds)[,14]
 )
 #細胞型（cell_type）のベクトルを作成
 cds_type <- as.character(cds_id_type$cell_type)
 colData(sce)$CellType <- cds_type
+#組織のタイプ（tissue）のベクトルを作成
+cds_tissue <- as.character(cds_id_type$tissue)
+colData(sce)$tissue <- cds_tissue
 
 #7 reducedDim(sce, “TSNE”)にt-SNEの座標が登録されていること
 #tsneのデータフレーム作成
