@@ -31,10 +31,6 @@ umap <- data.frame(
 GSE136049_sample_sheet <- GSE136049_sample_sheet[setd, ]
 
 
-
-
-
-
 #WBGeneのベクトルを作成
 WBGene <- as.character(rownames(GSE136049_expr_matrix))
 

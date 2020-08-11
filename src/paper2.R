@@ -22,12 +22,9 @@ GSE126954_sample_sheet <- GSE126954_sample_sheet[common.cellid, ]
 umap <- umap[common.cellid, ]
 
 
-
-
-
-
 #WBGeneのベクトルを作成
 WBGene <- as.character(rownames(GSE126954_expr_matrix))
+
 
 #3 rownames(sce)にNCBI Gene ID
 #annotation Hub
