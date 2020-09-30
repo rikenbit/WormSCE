@@ -1,4 +1,4 @@
-PAPERS = ["paper1", "paper2", "paper3"]
+PAPERS = ["paper1_Neuron", "paper2", "paper3"]
 rule all:
 	input:
 		expand('output/sce_{p}.RData',
