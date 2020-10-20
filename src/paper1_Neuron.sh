@@ -12,4 +12,4 @@
 SLURM_RESTART_COUNT=2
 
 Rscript=`ls .snakemake/conda/*/bin/Rscript`
-$Rscript src/paper1.R
+$Rscript src/paper1_Neuron.R

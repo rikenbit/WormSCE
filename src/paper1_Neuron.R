@@ -1,9 +1,11 @@
+#Neuron Subtype
+##################################################
 source("src/functions.R")
 
 download.file("http://waterston.gs.washington.edu/sci_RNA_seq_gene_count_data/Cao_et_al_2017_vignette.RData", "data/paper1.RData")
 load("data/paper1.RData")
 
-rnaseq1 <- CreateSeuratObject(counts = cds)
+rnaseq1 <- CreateSeuratObject(counts = cds.neurons)
 #WBGeneのベクトルを作成
 WBGene <- as.character(rownames(rnaseq1))
 
@@ -28,13 +30,19 @@ rowData(sce)$WormBase <- WBGene
 #6 colData(sce)$CellTypeに細胞型名 +tissue
 #細胞型対応表作成←このステップ飛ばして，いきなりベクトルに代入すればよくない？
 cds_id_type <- data.frame(
-  "cell_id" = pData(cds)[,1],
-  "cell_type" = pData(cds)[,13],
-  "tissue" = pData(cds)[,14]
+  "cell_id" = pData(cds.neurons)[,1],
+  "cell_type" = pData(cds.neurons)[,14],
+  "neuron_cell_type" = pData(cds.neurons)[,15],
+  "tissue" = pData(cds.neurons)[,13]
 )
 #細胞型（cell_type）のベクトルを作成
 cds_type <- as.character(cds_id_type$cell_type)
 colData(sce)$CellType <- cds_type
+
+#neuron_cell_typeのラベル追加
+cds_type <- as.character(cds_id_type$neuron_cell_type)
+colData(sce)$neuron_CellType <- cds_type
+
 #組織のタイプ（tissue）のベクトルを作成
 cds_tissue <- as.character(cds_id_type$tissue)
 colData(sce)$tissue <- cds_tissue
@@ -42,10 +50,11 @@ colData(sce)$tissue <- cds_tissue
 #7 reducedDim(sce, “TSNE”)にt-SNEの座標が登録されていること
 #tsneのデータフレーム作成
 cds_tsne <- data.frame(
-  "tsne1" = pData(cds)[,6],
-  "tsne2" = pData(cds)[,7]
+  "tsne1" = pData(cds.neurons)[,6],
+  "tsne2" = pData(cds.neurons)[,7]
 )
 reducedDims(sce) <- list(TSNE=cds_tsne)
 
 #sceオブジェクトのエクスポート 
-save(sce, file = "output/sce_paper1.RData")
+save(sce, file = "output/sce_paper1_Neuron.RData")
+##################################################
